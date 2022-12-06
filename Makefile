@@ -70,7 +70,7 @@ ${LIB}: ${OBJS}
 	${AR} ${LIB} $^
 
 ${OBJS}: ${PATH_OBJS}/%.o: %.c ${HEADER}
-	mkdir -p ${PATH_OBJS}
+	@mkdir -p ${PATH_OBJS}
 	${CC} ${CFLAGS} -c $< -o $@ -I ${INCLUDES}
 
 clean:
@@ -80,5 +80,8 @@ fclean: clean
 	rm -f ${LIB}
 
 re: fclean ${LIB}
+
+test: re
+	PYTHONDONTWRITEBYTECODE=1 pytest -p no:cacheprovider tests
 
 .PHONY: all clean fclean re
