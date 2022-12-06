@@ -12,6 +12,6 @@ ft_lstadd_front.restype = None
 
 def test_lstadd_front():
     lst = None
-    # ft_lstadd_front(addressof(lst), ft_lstnew(42))
-    # assert lst.contents.content == 42
-    # assert not lst.contents.next
+    ft_lstadd_front(addressof(lst), ft_lstnew(42))
+    assert lst.contents.content == 42
+    assert not lst.contents.next
