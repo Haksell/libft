@@ -85,7 +85,7 @@ fclean: clean
 re: fclean ${LIBRARY}
 
 test: ${OBJS}
-	@${CC} -shared -o ${SHARED_LIBRARY} ${OBJS}
+	@${CC} -fPIC -shared -o ${SHARED_LIBRARY} ${OBJS}
 	@PYTHONDONTWRITEBYTECODE=1 pytest -rA -p no:cacheprovider tests
 
 retest: re test
