@@ -1,4 +1,6 @@
-LIB = libft.a
+NAME = libft
+LIBRARY = ${addsuffix .a, ${NAME}}
+SHARED_LIBRARY = ${addsuffix .so, ${NAME}}
 
 PATH_SRCS += srcs/conversion
 PATH_SRCS += srcs/ctype
@@ -64,24 +66,28 @@ AR = ar rcs
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-all: ${LIB}
+all: ${LIBRARY}
 
-${LIB}: ${OBJS}
-	${AR} ${LIB} $^
+${LIBRARY}: ${OBJS}
+	${AR} ${LIBRARY} $^
 
 ${OBJS}: ${PATH_OBJS}/%.o: %.c ${HEADER}
 	@mkdir -p ${PATH_OBJS}
-	${CC} ${CFLAGS} -c $< -o $@ -I ${INCLUDES}
+	${CC} ${CFLAGS} -c $< -o $@ -I${INCLUDES}
 
 clean:
 	rm -rf ${PATH_OBJS}
 
 fclean: clean
-	rm -f ${LIB}
+	rm -f ${LIBRARY}
+	rm -f ${SHARED_LIBRARY}
 
-re: fclean ${LIB}
+re: fclean ${LIBRARY}
 
-test: re
-	PYTHONDONTWRITEBYTECODE=1 pytest -p no:cacheprovider tests
+test: ${OBJS}
+	@${CC} -shared -o ${SHARED_LIBRARY} ${OBJS}
+	@PYTHONDONTWRITEBYTECODE=1 pytest -rA -p no:cacheprovider tests
+
+retest: re test
 
 .PHONY: all clean fclean re
