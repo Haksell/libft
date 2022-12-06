@@ -1,10 +1,10 @@
-import ctypes
+from ctypes import c_int
 from utils import libft
 
 ft_toupper = libft.ft_toupper
 toupper = libft.toupper
-ft_toupper.argtypes = toupper.argtypes = (ctypes.c_int,)
-ft_toupper.restype = ft_toupper.restype = ctypes.c_int
+ft_toupper.argtypes = toupper.argtypes = (c_int,)
+ft_toupper.restype = ft_toupper.restype = c_int
 
 
 def test_toupper():

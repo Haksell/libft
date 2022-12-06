@@ -1,10 +1,10 @@
-import ctypes
+from ctypes import c_int
 from utils import libft
 
 ft_isprint = libft.ft_isprint
 isprint = libft.isprint
-ft_isprint.argtypes = isprint.argtypes = (ctypes.c_int,)
-ft_isprint.restype = ft_isprint.restype = ctypes.c_int
+ft_isprint.argtypes = isprint.argtypes = (c_int,)
+ft_isprint.restype = ft_isprint.restype = c_int
 
 
 def test_isprint():
