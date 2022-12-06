@@ -1,4 +1,4 @@
-from ctypes import *  # TODO
+from ctypes import c_char_p, pointer, POINTER
 from test_lstnew import ft_lstnew
 from utils import libft, t_list
 
