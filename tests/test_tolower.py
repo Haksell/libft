@@ -1,5 +1,5 @@
 import ctypes
-from main import libft
+from utils import libft
 
 ft_tolower = libft.ft_tolower
 tolower = libft.tolower

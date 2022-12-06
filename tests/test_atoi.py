@@ -1,5 +1,5 @@
 import ctypes
-from main import libft
+from utils import libft
 from random import randint
 
 ft_atoi = libft.ft_atoi

@@ -1,5 +1,5 @@
 import ctypes
-from main import libft
+from utils import libft
 
 ft_toupper = libft.ft_toupper
 toupper = libft.toupper

@@ -1,5 +1,5 @@
 import ctypes
-from main import libft
+from utils import libft
 
 ft_isprint = libft.ft_isprint
 isprint = libft.isprint

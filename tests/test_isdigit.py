@@ -1,5 +1,5 @@
 import ctypes
-from main import libft
+from utils import libft
 
 ft_isdigit = libft.ft_isdigit
 isdigit = libft.isdigit
