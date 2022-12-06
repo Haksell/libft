@@ -8,7 +8,7 @@ ft_lstsize.argtypes = (POINTER(t_list),)
 ft_lstsize.restype = c_int
 
 
-def test_lstadd_front():
+def test_lstsize():
     lst = POINTER(t_list)()
     assert ft_lstsize(lst) == 0
     ft_lstadd_front(byref(lst), ft_lstnew(69))
