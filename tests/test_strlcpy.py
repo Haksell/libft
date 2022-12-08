@@ -19,12 +19,12 @@ def test_zero():
 
 
 def test_smaller():
-    for i in range(1, 26):
+    for i in range(1, 27):
         compare(i)
 
 
 def test_same():
-    compare(26)
+    compare(27)
 
 
 def test_bigger():

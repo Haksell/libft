@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:59:03 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/11 18:38:52 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:50:29 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,11 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	di;
-	size_t	si;
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	concat_len;
+	size_t	i;
 
 	src_len = ft_strlen(src);
-	di = 0;
-	while (di < size && dst[di] != '\0')
-		di++;
-	dst_len = di;
-	concat_len = dst_len + src_len;
-	if (di == size)
-		return (concat_len);
-	si = 0;
-	while (src[si] != '\0' && di < size - 1)
-	{
-		dst[di] = src[si];
-		di++;
-		si++;
-	}
-	dst[di] = '\0';
-	return (concat_len);
+	i = 0;
+	while (i < size && dst[i] != '\0')
+		i++;
+	return (i + ft_strlcpy(dst + i, src, size - i));
 }
