@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 20:32:10 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/17 04:05:00 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/08 13:38:50 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void			*ptr;
 	const size_t	bytes = nmemb * size;
+	void			*ptr;
 
 	if (size > 0 && nmemb > SIZE_MAX / size)
 		return (NULL);
