@@ -73,7 +73,7 @@ ${LIBRARY}: ${OBJS}
 
 ${OBJS}: ${PATH_OBJS}/%.o: %.c ${HEADER}
 	@mkdir -p ${PATH_OBJS}
-	${CC} ${CFLAGS} -c $< -o $@ -I${INCLUDES}
+	${CC} ${CFLAGS} -fPIC -c $< -o $@ -I${INCLUDES}
 
 clean:
 	rm -rf ${PATH_OBJS}
@@ -81,12 +81,14 @@ clean:
 fclean: clean
 	rm -f ${LIBRARY}
 	rm -f ${SHARED_LIBRARY}
+	rm -rf .pytest_cache
+	rm -rf tests/__pycache__
 
 re: fclean ${LIBRARY}
 
 test: ${OBJS}
 	@${CC} -fPIC -shared -o ${SHARED_LIBRARY} ${OBJS}
-	@PYTHONDONTWRITEBYTECODE=1 pytest -rA -p no:cacheprovider tests
+	pytest -rA tests
 
 retest: re test
 
