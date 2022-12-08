@@ -1,4 +1,4 @@
-from ctypes import create_string_buffer, c_char_p, c_size_t
+from ctypes import c_char_p, c_size_t
 from utils import libft
 
 ft_strlen = libft.ft_strlen
