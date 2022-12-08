@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:28:51 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/08 09:12:52 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/08 09:14:07 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ static void	*ft_memcpy_reverse(void *dest, const void *src, size_t n)
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	void *(*funcs[])(void *, const void *, size_t) = {ft_memcpy, ft_memcpy_reverse};
+	static void	*(*funcs[])(void *, const void *, size_t) = {
+		ft_memcpy,
+		ft_memcpy_reverse
+	};
 
-	return funcs[dest > src](dest, src, n);
+	return (funcs[dest > src](dest, src, n));
 }
