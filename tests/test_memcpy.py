@@ -1,4 +1,4 @@
-from ctypes import *  # TODO
+from ctypes import addressof, create_string_buffer, c_int, c_size_t, c_void_p
 from utils import libft
 
 ft_memcpy = libft.ft_memcpy
