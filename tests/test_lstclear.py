@@ -1,4 +1,4 @@
-from ctypes import *
+from ctypes import byref, c_void_p, CFUNCTYPE, pointer, POINTER
 from test_lstadd_front import ft_lstadd_front
 from test_lstnew import ft_lstnew
 from utils import libft, t_list
