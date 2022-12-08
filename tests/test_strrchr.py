@@ -16,7 +16,7 @@ def test_first():
         compare(s, c)
 
 def test_in():
-    for s, c in [("yolo", 'o'), ("wesh", 's'), ("oopoo", 'p')]:
+    for s, c in [("oloy", 'o'), ("wesh", 's'), ("oopoo", 'p')]:
         compare(s, c)
 
 def test_last():
