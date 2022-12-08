@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:57:35 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/11 22:47:36 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:26:28 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	n;
 	char	*t;
 
-	if (s == NULL)
-		return (NULL);
-	else if (f == NULL)
+	if (f == NULL)
 		return (ft_strdup(s));
 	n = ft_strlen(s);
 	t = malloc(n + 1);
