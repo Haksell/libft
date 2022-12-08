@@ -8,5 +8,4 @@ ft_strlen.restype = c_size_t
 
 def test_strlen():
     for b in (b"", b"a", b"ab", b"abc", b"abcd", b"abcde", b"ab\0cde"):
-        sb = create_string_buffer(b)
-        assert ft_strlen(sb) == libft.strlen(b)
+        assert ft_strlen(b) == libft.strlen(b)
