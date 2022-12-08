@@ -13,9 +13,9 @@ sum_ = 0
 
 
 @func_type
-def func(_):
+def func(n):
     global sum_
-    sum_ += _
+    sum_ += n
 
 
 def test_lstiter():
