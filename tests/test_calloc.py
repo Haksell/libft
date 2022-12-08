@@ -1,4 +1,4 @@
-from ctypes import *  # TODO
+from ctypes import cast, c_int, c_size_t, c_void_p, POINTER
 from utils import libft
 
 ft_calloc = libft.ft_calloc
