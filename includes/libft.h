@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/09 21:00:23 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/09 08:56:14 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
+int		ft_islower(int c);
 int		ft_isprint(int c);
+int		ft_isupper(int c);
 char	*ft_itoa(int n);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);

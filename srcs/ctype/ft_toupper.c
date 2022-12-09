@@ -6,14 +6,13 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:21:53 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/08 17:58:22 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/09 08:58:55 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
-	if ('a' <= c && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
+	return (c ^ (ft_islower(c) << 5));
 }

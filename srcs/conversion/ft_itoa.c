@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:24:06 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/11 23:13:56 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/09 08:52:42 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ static unsigned int	get_abs(int n)
 
 static unsigned int	get_length(unsigned int absolute)
 {
-	unsigned int	result;
+	unsigned int	length;
 
-	result = 0;
+	length = 0;
 	while (absolute > 0)
 	{
-		result++;
+		length++;
 		absolute /= 10;
 	}
-	return (result);
+	return (length);
 }
 
 static void	ft_itoa_recursive(unsigned int absolute, char *result)
