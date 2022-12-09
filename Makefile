@@ -4,6 +4,7 @@ SHARED_LIBRARY = ${addsuffix .so, ${NAME}}
 
 PATH_SRCS += srcs/conversion
 PATH_SRCS += srcs/chars
+PATH_SRCS += srcs/dynamic_strings
 PATH_SRCS += srcs/linked_lists
 PATH_SRCS += srcs/math
 PATH_SRCS += srcs/memory
@@ -13,6 +14,7 @@ PATH_SRCS += srcs/strings
 FILES += ft_atoi
 FILES += ft_bzero
 FILES += ft_calloc
+FILES += ft_ds_new
 FILES += ft_isalnum
 FILES += ft_isalpha
 FILES += ft_isascii
