@@ -6,12 +6,18 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/09 10:54:31 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:01:30 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
+
+# define FILE_DESCRIPTORS 1024
 
 # include <stdbool.h>
 # include <stdint.h>
@@ -30,6 +36,17 @@ typedef struct s_dynamic_string {
 	size_t	length;
 	size_t	capacity;
 }	t_dynamic_string;
+
+typedef enum e_gnl_state {
+	READING,
+	LAST_LINE,
+	FINISHED
+}	t_gnl_state;
+
+typedef struct s_gnl_info {
+	t_gnl_state			states[FILE_DESCRIPTORS];
+	t_dynamic_string	strings[FILE_DESCRIPTORS];
+}	t_gnl_info;
 
 int					ft_atoi(const char *nptr);
 void				ft_bzero(void *s, size_t n);
@@ -80,5 +97,6 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+char				*get_next_line(int fd);
 
 #endif
