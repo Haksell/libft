@@ -4,7 +4,7 @@ from utils import libft
 ft_isupper = libft.ft_isupper
 isupper = libft.isupper
 ft_isupper.argtypes = isupper.argtypes = (c_int,)
-ft_isupper.restype = ft_isupper.restype = c_int
+ft_isupper.restype = isupper.restype = c_int
 
 
 def test_isupper():

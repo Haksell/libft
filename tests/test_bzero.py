@@ -1,5 +1,5 @@
 from ctypes import addressof, create_string_buffer, c_int, c_void_p, c_size_t
-from utils import libft
+from utils import INT_MAX, libft
 
 ft_bzero = libft.ft_bzero
 ft_bzero.argtypes = (c_void_p, c_size_t)
@@ -16,11 +16,10 @@ def test_string():
 
 
 def test_int():
-    int_max = (1 << 31) - 1
     size = 10
-    a1 = (c_int * size)(*([int_max] * size))
+    a1 = (c_int * size)(*([INT_MAX] * size))
     ft_bzero(a1, 9)
     assert a1[0] == 0
     assert a1[1] == 0
-    assert a1[2] == int_max - 255
-    assert a1[3] == int_max
+    assert a1[2] == INT_MAX - 255
+    assert a1[3] == INT_MAX

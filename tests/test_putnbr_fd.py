@@ -1,7 +1,7 @@
 from ctypes import c_int
 from random import randint
 from test_putchar_fd import ft_putchar_fd
-from utils import libft
+from utils import INT_MAX, INT_MIN, libft
 import os
 
 ft_putnbr_fd = libft.ft_putnbr_fd
@@ -9,8 +9,6 @@ ft_putnbr_fd.argtypes = (c_int, c_int)
 ft_putnbr_fd.restype = None
 
 FILENAME = "tests/files/ft_putnbr_fd"
-INT_MAX = (1 << 31) - 1
-INT_MIN = ~INT_MAX
 
 
 def check(nums):

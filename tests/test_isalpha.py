@@ -4,7 +4,7 @@ from utils import libft
 ft_isalpha = libft.ft_isalpha
 isalpha = libft.isalpha
 ft_isalpha.argtypes = isalpha.argtypes = (c_int,)
-ft_isalpha.restype = ft_isalpha.restype = c_int
+ft_isalpha.restype = isalpha.restype = c_int
 
 
 def test_isalpha():

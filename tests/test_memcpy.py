@@ -1,5 +1,5 @@
 from ctypes import addressof, create_string_buffer, c_int, c_size_t, c_void_p
-from utils import libft
+from utils import INT_MAX, libft
 
 ft_memcpy = libft.ft_memcpy
 ft_memcpy.argtypes = (c_void_p, c_void_p, c_size_t)
@@ -18,24 +18,23 @@ def test_string():
 
 
 def test_int():
-    int_max = (1 << 31) - 1
     size = 10
     ArrayTen = c_int * 10
     a1 = ArrayTen(*range(size))
-    a2 = ArrayTen(*([int_max] * size))
+    a2 = ArrayTen(*([INT_MAX] * size))
     a3 = ft_memcpy(a2, a1, 5)
     assert addressof(a2) == a3
     assert list(a2) == [
         0,
-        int_max - 254,
-        int_max,
-        int_max,
-        int_max,
-        int_max,
-        int_max,
-        int_max,
-        int_max,
-        int_max,
+        INT_MAX - 254,
+        INT_MAX,
+        INT_MAX,
+        INT_MAX,
+        INT_MAX,
+        INT_MAX,
+        INT_MAX,
+        INT_MAX,
+        INT_MAX,
     ]
 
 

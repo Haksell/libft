@@ -4,7 +4,7 @@ from utils import libft
 ft_isprint = libft.ft_isprint
 isprint = libft.isprint
 ft_isprint.argtypes = isprint.argtypes = (c_int,)
-ft_isprint.restype = ft_isprint.restype = c_int
+ft_isprint.restype = isprint.restype = c_int
 
 
 def test_isprint():

@@ -1,13 +1,10 @@
 from ctypes import c_char_p, c_int
-from utils import libft
+from utils import INT_MAX, INT_MIN, libft
 from random import randint
 
 ft_itoa = libft.ft_itoa
 ft_itoa.argtypes = (c_int,)
 ft_itoa.restype = c_char_p
-
-INT_MAX = (1 << 31) - 1
-INT_MIN = ~INT_MAX
 
 
 def check(n):

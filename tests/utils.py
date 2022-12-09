@@ -1,5 +1,8 @@
 from ctypes import CDLL, c_void_p, POINTER, Structure
 
+INT_MAX = (1 << 31) - 1
+INT_MIN = ~INT_MAX
+
 
 def sign(n):
     return 1 if n > 0 else -1 if n < 0 else 0

@@ -1,13 +1,10 @@
 from ctypes import c_char_p, c_int
-from utils import libft
+from utils import INT_MAX, INT_MIN, libft
 from random import randint
 
 ft_atoi = libft.ft_atoi
 ft_atoi.argtypes = (c_char_p,)
 ft_atoi.restype = c_int
-
-INT_MAX = (1 << 31) - 1
-INT_MIN = ~INT_MAX
 
 
 def compare(n):
