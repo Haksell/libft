@@ -27,3 +27,18 @@ def test_small():
 def test_random():
     for _ in range(100):
         compare(randint(INT_MIN, INT_MAX))
+
+
+def test_spaces():
+    assert ft_atoi(b"     42") == 42
+
+
+def test_plus_minus():
+    assert ft_atoi(b"+42") == 42
+    assert ft_atoi(b"-42") == -42
+
+
+def test_unrecognized():
+    assert ft_atoi(b"   42  42") == 42
+    assert ft_atoi(b"-42-42") == -42
+    assert ft_atoi(b"12345qwert6789") == 12345

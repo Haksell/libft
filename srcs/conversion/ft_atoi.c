@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 20:06:21 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/09 13:08:37 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/09 08:47:13 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_atoi(const char *nptr)
 	int				digit;
 
 	i = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+	while (nptr[i] == ' ' || (9 <= nptr[i] && nptr[i] <= 13))
 		i++;
 	sign = 1;
 	if (nptr[i] == '-' || nptr[i] == '+')
