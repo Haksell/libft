@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:27:48 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/09 21:15:19 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/09 09:03:03 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (lst == NULL || new == NULL)
-		return ;
-	else if (*lst == NULL)
+	if (*lst == NULL)
 		*lst = new;
 	else
 	{
