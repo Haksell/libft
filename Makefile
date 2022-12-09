@@ -92,6 +92,6 @@ test: ${OBJS}
 	@${CC} -fPIC -shared -o ${SHARED_LIBRARY} ${OBJS}
 	pytest -rA tests
 
-retest: re test
+retest: fclean test
 
 .PHONY: all clean fclean re
