@@ -6,14 +6,13 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/09 08:56:14 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/09 09:00:01 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <errno.h>
 # include <stdbool.h>
 # include <stdint.h>
 # include <stddef.h>

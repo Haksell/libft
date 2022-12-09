@@ -3,7 +3,7 @@ LIBRARY = ${addsuffix .a, ${NAME}}
 SHARED_LIBRARY = ${addsuffix .so, ${NAME}}
 
 PATH_SRCS += srcs/conversion
-PATH_SRCS += srcs/ctype
+PATH_SRCS += srcs/chars
 PATH_SRCS += srcs/linked_lists
 PATH_SRCS += srcs/memory
 PATH_SRCS += srcs/output
