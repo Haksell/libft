@@ -1,6 +1,5 @@
 from ctypes import c_char_p
 from utils import libft, t_dynamic_string
-import os
 
 ft_ds_new = libft.ft_ds_new
 ft_ds_new.argtypes = (c_char_p,)
