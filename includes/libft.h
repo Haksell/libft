@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/09 10:02:34 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:15:34 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_dynamic_string {
 int					ft_atoi(const char *);
 void				ft_bzero(void *, size_t );
 void				*ft_calloc(size_t, size_t);
+bool				ft_ds_extend(t_dynamic_string *s1, char *s2, size_t len2);
 t_dynamic_string	ft_ds_new(char *s);
 int					ft_isalpha(int);
 int					ft_isalnum(int);
@@ -77,6 +78,5 @@ char				*ft_strtrim(char const *, char const *);
 char				*ft_substr(char const *, unsigned int, size_t);
 int					ft_tolower(int);
 int					ft_toupper(int);
-
 
 #endif

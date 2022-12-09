@@ -14,6 +14,7 @@ PATH_SRCS += srcs/strings
 FILES += ft_atoi
 FILES += ft_bzero
 FILES += ft_calloc
+FILES += ft_ds_extend
 FILES += ft_ds_new
 FILES += ft_isalnum
 FILES += ft_isalpha
