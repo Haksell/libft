@@ -11,7 +11,7 @@ INT_MIN = ~INT_MAX
 
 
 def compare(n):
-    assert c_char_p(libft.ft_itoa(n)).value == bytes(str(n), "utf-8")
+    assert ft_itoa(n) == bytes(str(n), "utf-8")
 
 
 def test_limits():
