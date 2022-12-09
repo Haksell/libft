@@ -10,20 +10,20 @@ INT_MAX = (1 << 31) - 1
 INT_MIN = ~INT_MAX
 
 
-def compare(n):
+def check(n):
     assert ft_itoa(n) == bytes(str(n), "utf-8")
 
 
 def test_limits():
-    compare(INT_MIN)
-    compare(INT_MAX)
+    check(INT_MIN)
+    check(INT_MAX)
 
 
 def test_small():
     for i in range(-200, 201):
-        compare(i)
+        check(i)
 
 
 def test_random():
     for _ in range(100):
-        compare(randint(INT_MIN, INT_MAX))
+        check(randint(INT_MIN, INT_MAX))
