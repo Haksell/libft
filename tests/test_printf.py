@@ -69,3 +69,19 @@ def test_u(capfd):
 def test_x(capfd):
     for n in [*range(300), (1 << 32) - 1, *sample(range(1 << 32), 200)]:
         compare(capfd, b"%x", n)
+
+
+def test_all(capfd):
+    s = create_string_buffer(b"42")
+    compare(
+        capfd,
+        b"%c | %s | %p | %d | %i | %u | %x | %x\n",
+        42,
+        s,
+        addressof(s),
+        -42,
+        -42,
+        42,
+        42,
+        42,
+    )
