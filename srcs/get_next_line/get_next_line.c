@@ -6,29 +6,11 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 10:55:49 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/09 11:59:23 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/12 08:31:12 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static t_gnl_info	*init_gnl_info(void)
-{
-	t_gnl_info	*gnl_info;
-	size_t		fd;
-
-	gnl_info = malloc(sizeof(t_gnl_info));
-	if (gnl_info == NULL)
-		return (NULL);
-	fd = 0;
-	while (fd < FILE_DESCRIPTORS)
-	{
-		gnl_info->states[fd] = READING;
-		gnl_info->strings[fd] = ft_ds_new("");
-		fd++;
-	}
-	return (gnl_info);
-}
 
 static char	*subnstr(char *s, size_t start, size_t len)
 {
@@ -62,26 +44,21 @@ static size_t	find_newline(char *s, size_t lim)
 	return (SIZE_MAX);
 }
 
-static char	*strcut(t_dynamic_string *line, size_t middle)
+static char	*strcut(char *content, char *buffer, size_t middle)
 {
-	const char		*left = subnstr(line->content, 0, middle);
-	const size_t	right_length = ft_strlen(line->content) - middle;
-	const char		*right = subnstr(line->content, middle, right_length);
+	const char		*left = subnstr(content, 0, middle);
+	const size_t	right_length = ft_strlen(content) - middle;
+	const char		*right = subnstr(content, middle, right_length);
 
-	free(line->content);
+	free(content);
 	if (left == NULL || right == NULL)
 	{
 		free((char *)left);
 		free((char *)right);
 		return (NULL);
 	}
-	*line = ft_ds_new((char *)right);
+	ft_strlcpy(buffer, right, SIZE_MAX);
 	free((char *)right);
-	if (line->content == NULL)
-	{
-		free((char *)left);
-		return (NULL);
-	}
 	return ((char *)left);
 }
 
@@ -113,25 +90,29 @@ static bool	keep_reading(int fd, t_dynamic_string *line, t_gnl_state *state)
 
 char	*get_next_line(int fd)
 {
-	static t_gnl_info		*gnl_info = NULL;
-	size_t					nl_index;
-	char					*return_value;
+	static t_gnl_state	states[FILE_DESCRIPTORS] = {0};
+	static char			buffers[FILE_DESCRIPTORS][BUFFER_SIZE + 1] = {0};
+	size_t				nl_index;
+	char				*return_value;
+	t_dynamic_string	line;
 
-	if (gnl_info == NULL)
-		gnl_info = init_gnl_info();
-	if (fd < 0 || fd >= FILE_DESCRIPTORS || gnl_info == NULL
-		|| gnl_info->states[fd] == FINISHED
-		|| !keep_reading(fd, gnl_info->strings + fd, gnl_info->states + fd))
+	if (BUFFER_SIZE <= 0 || FILE_DESCRIPTORS <= 0
+		|| fd < 0 || fd >= FILE_DESCRIPTORS
+		|| states[fd] == FINISHED)
 		return (NULL);
-	nl_index = find_newline(gnl_info->strings[fd].content, SIZE_MAX);
-	if (gnl_info->states[fd] == LAST_LINE && (nl_index == SIZE_MAX
-			|| gnl_info->strings[fd].content[nl_index + 1] == '\0'))
+	line = ft_ds_new(buffers[fd]);
+	ft_bzero(buffers[fd], BUFFER_SIZE + 1);
+	if (!keep_reading(fd, &line, states + fd))
+		return (NULL);
+	nl_index = find_newline(line.content, SIZE_MAX);
+	if (states[fd] == LAST_LINE
+		&& (nl_index == SIZE_MAX || line.content[nl_index + 1] == '\0'))
 	{
-		gnl_info->states[fd] = FINISHED;
-		return (gnl_info->strings[fd].content);
+		states[fd] = FINISHED;
+		return (line.content);
 	}
-	return_value = strcut(gnl_info->strings + fd, nl_index + 1);
+	return_value = strcut(line.content, buffers[fd], nl_index + 1);
 	if (return_value == NULL)
-		gnl_info->states[fd] = FINISHED;
+		states[fd] = FINISHED;
 	return (return_value);
 }

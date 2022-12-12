@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/09 12:01:30 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/12 08:22:20 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
+#  define BUFFER_SIZE 1 // TODO 1024
 # endif
 
 # define FILE_DESCRIPTORS 1024
@@ -42,11 +42,6 @@ typedef enum e_gnl_state {
 	LAST_LINE,
 	FINISHED
 }	t_gnl_state;
-
-typedef struct s_gnl_info {
-	t_gnl_state			states[FILE_DESCRIPTORS];
-	t_dynamic_string	strings[FILE_DESCRIPTORS];
-}	t_gnl_info;
 
 int					ft_atoi(const char *nptr);
 void				ft_bzero(void *s, size_t n);
@@ -97,6 +92,6 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-char				*get_next_line(int fd);
+// char				*get_next_line(int fd);
 
 #endif
