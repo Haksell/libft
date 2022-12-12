@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/12 09:22:45 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/12 09:33:20 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst,
+						void *(*f)(void *), void (*del)(void *));
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 
@@ -91,7 +92,8 @@ void				*ft_memset(void *s, int c, size_t n);
 
 // srcs/output
 int					ft_printf(const char *format, ...);
-int					ft_putbase_fd(unsigned long n, char *base, size_t base_length, int fd);
+int					ft_putbase_fd(unsigned long n,
+						char *base, size_t base_length, int fd);
 int					ft_putchar_fd(char c, int fd);
 int					ft_putendl_fd(char *s, int fd);
 int					ft_putnbr_fd(int n, int fd);
@@ -109,7 +111,8 @@ char				*ft_strrchr(const char *s, int c);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlen(const char *s);
-char				*ft_strnstr(const char *big, const char *little, size_t len);
+char				*ft_strnstr(
+						const char *big, const char *little, size_t len);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 
