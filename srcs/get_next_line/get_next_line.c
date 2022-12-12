@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 10:55:49 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/12 08:31:12 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/12 08:34:04 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,9 +96,7 @@ char	*get_next_line(int fd)
 	char				*return_value;
 	t_dynamic_string	line;
 
-	if (BUFFER_SIZE <= 0 || FILE_DESCRIPTORS <= 0
-		|| fd < 0 || fd >= FILE_DESCRIPTORS
-		|| states[fd] == FINISHED)
+	if (fd < 0 || fd >= FILE_DESCRIPTORS || states[fd] == FINISHED)
 		return (NULL);
 	line = ft_ds_new(buffers[fd]);
 	ft_bzero(buffers[fd], BUFFER_SIZE + 1);
