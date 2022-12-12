@@ -6,7 +6,7 @@ import os
 
 ft_putnbr_fd = libft.ft_putnbr_fd
 ft_putnbr_fd.argtypes = (c_int, c_int)
-ft_putnbr_fd.restype = None
+ft_putnbr_fd.restype = c_int
 
 FILENAME = "tests/files/ft_putnbr_fd"
 

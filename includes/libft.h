@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/12 09:02:58 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/12 09:22:45 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int					ft_putendl_fd(char *s, int fd);
 int					ft_putnbr_fd(int n, int fd);
 int					ft_putstr_fd(char *s, int fd);
 
-//src/strings
+// src/strings
 char				**ft_split(char const *s, char c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strdup(const char *s);
