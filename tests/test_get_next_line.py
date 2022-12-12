@@ -14,7 +14,6 @@ first_test_done = False
 
 
 def handle_file_closing():
-    print(globals())
     global first_test_done
     if first_test_done:
         for file in FILES:
