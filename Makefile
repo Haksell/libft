@@ -102,4 +102,4 @@ test: ${OBJS}
 
 retest: fclean test
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test retest
