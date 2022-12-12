@@ -6,13 +6,13 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:32:04 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/09 14:45:59 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/12 08:41:47 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	return write(fd, &c, 1);
 }
