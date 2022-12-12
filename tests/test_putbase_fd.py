@@ -22,7 +22,7 @@ def check(nums):
         with open(FILENAME, "w") as fp:
             fd = fp.fileno()
             for n in nums:
-                ft_putbase_fd(n, base, len(base), fd)
+                assert ft_putbase_fd(n, base, len(base), fd) == len(func(n))
                 ft_putchar_fd(ord("\n"), fd)
         assert open(FILENAME).read() == "".join(f"{func(n)}\n" for n in nums)
     os.remove(FILENAME)

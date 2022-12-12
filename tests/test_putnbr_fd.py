@@ -15,7 +15,7 @@ def check(nums):
     with open(FILENAME, "w") as fp:
         fd = fp.fileno()
         for n in nums:
-            ft_putnbr_fd(n, fd)
+            assert ft_putnbr_fd(n, fd) == len(str(fd))
             ft_putchar_fd(ord("\n"), fd)
     assert open(FILENAME).read() == "".join(f"{n}\n" for n in nums)
     os.remove(FILENAME)
