@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/12 09:33:20 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/13 09:39:31 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define LIBFT_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1024
+#  define BUFFER_SIZE 4096
 # endif
 
-# define FILE_DESCRIPTORS 1024
+# define FILE_DESCRIPTORS 64
 # define DECIMAL "0123456789"
 # define HEXA_LOWER "0123456789abcdef"
 # define HEXA_UPPER "0123456789ABCDEF"
