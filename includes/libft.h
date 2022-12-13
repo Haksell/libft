@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/13 09:39:31 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:56:09 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ int					ft_putstr_fd(char *s, int fd);
 // src/strings
 char				**ft_split(char const *s, char c);
 char				*ft_strchr(const char *s, int c);
+int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(char const *s1, char const *s2);
 void				ft_striteri(char *s, void (*f)(unsigned int, char*));

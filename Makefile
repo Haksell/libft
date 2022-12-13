@@ -47,6 +47,7 @@ FILES += ft_putnbr_fd
 FILES += ft_putstr_fd
 FILES += ft_split
 FILES += ft_strchr
+FILES += ft_strcmp
 FILES += ft_strdup
 FILES += ft_striteri
 FILES += ft_strjoin
