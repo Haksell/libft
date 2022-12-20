@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:06:08 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/09 13:23:06 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/20 23:10:53 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,6 @@ static size_t	get_word_len(const char *s, char c)
 	return (i);
 }
 
-static char	**free_words(char **words, size_t arr_idx)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < arr_idx)
-	{
-		free(words[i]);
-		i++;
-	}
-	free(words);
-	return (NULL);
-}
-
 static char	*add_word(const char *s, size_t *i, char c)
 {
 	const size_t	word_len = get_word_len(s + *i, c);
@@ -91,7 +77,9 @@ char	**ft_split(char const *s, char c)
 		{
 			words[arr_idx] = add_word(s, &i, c);
 			if (words[arr_idx] == NULL)
-				return (free_words(words, arr_idx));
+				ft_free_double_pointer(words, arr_idx);
+			if (words[arr_idx] == NULL)
+				return (NULL);
 			arr_idx++;
 		}
 		i++;
