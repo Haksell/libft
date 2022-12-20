@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2022/12/20 23:06:07 by axbrisse         ###   ########.fr        #
+#    Updated: 2022/12/21 00:25:42 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ FILES += ft_memcmp
 FILES += ft_memcpy
 FILES += ft_memmove
 FILES += ft_memset
+FILES += ft_num_words
 FILES += ft_printf
 FILES += ft_putbase_fd
 FILES += ft_putchar_fd

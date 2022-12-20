@@ -6,37 +6,13 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:06:08 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/20 23:10:53 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/21 00:23:17 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	get_num_words(char const *s, char c)
-{
-	bool	last_is_separator;
-	size_t	res;
-	size_t	i;
-
-	last_is_separator = true;
-	res = 0;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			last_is_separator = true;
-		else
-		{
-			if (last_is_separator)
-				res++;
-			last_is_separator = false;
-		}
-		i++;
-	}
-	return (res);
-}
-
-static size_t	get_word_len(const char *s, char c)
+static size_t	get_word_len(char const *s, char c)
 {
 	size_t	i;
 
@@ -46,7 +22,7 @@ static size_t	get_word_len(const char *s, char c)
 	return (i);
 }
 
-static char	*add_word(const char *s, size_t *i, char c)
+static char	*add_word(char const *s, size_t *i, char c)
 {
 	const size_t	word_len = get_word_len(s + *i, c);
 	const size_t	bytes = word_len + 1;
@@ -61,7 +37,7 @@ static char	*add_word(const char *s, size_t *i, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	const size_t	num_words = get_num_words(s, c);
+	const size_t	num_words = ft_num_words(s, c);
 	char			**words;
 	size_t			i;
 	size_t			arr_idx;
