@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:06:08 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/21 00:23:17 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/21 03:59:48 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	**ft_split(char const *s, char c)
 		{
 			words[arr_idx] = add_word(s, &i, c);
 			if (words[arr_idx] == NULL)
-				ft_free_double_pointer(words, arr_idx);
+				ft_free_double_pointer((void **)words, arr_idx);
 			if (words[arr_idx] == NULL)
 				return (NULL);
 			arr_idx++;
