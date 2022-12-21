@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 10:55:49 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/12 08:34:04 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/21 05:24:12 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ static char	*strcut(char *content, char *buffer, size_t middle)
 	return ((char *)left);
 }
 
-static bool	keep_reading(int fd, t_dynamic_string *line, t_gnl_state *state)
+static bool	keep_reading(int fd, t_dynamic_string *line, bool *is_last_line)
 {
 	char	buffer[BUFFER_SIZE + 1];
 	ssize_t	bytes_read;
 
 	ft_bzero(buffer, BUFFER_SIZE + 1);
 	bytes_read = BUFFER_SIZE;
-	while (find_newline(buffer, bytes_read) == SIZE_MAX && *state == READING)
+	while (find_newline(buffer, bytes_read) == SIZE_MAX && !*is_last_line)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (
@@ -78,39 +78,39 @@ static bool	keep_reading(int fd, t_dynamic_string *line, t_gnl_state *state)
 			|| !ft_ds_extend(line, buffer, bytes_read)
 		)
 		{
-			*state = FINISHED;
+			*is_last_line = false;
 			free(line->content);
 			return (false);
 		}
 		if (bytes_read < BUFFER_SIZE)
-			*state = LAST_LINE;
+			*is_last_line = true;
 	}
 	return (true);
 }
 
 char	*get_next_line(int fd)
 {
-	static t_gnl_state	states[FILE_DESCRIPTORS] = {0};
+	static bool			is_last_line[FILE_DESCRIPTORS] = {false};
 	static char			buffers[FILE_DESCRIPTORS][BUFFER_SIZE + 1] = {0};
 	size_t				nl_index;
 	char				*return_value;
 	t_dynamic_string	line;
 
-	if (fd < 0 || fd >= FILE_DESCRIPTORS || states[fd] == FINISHED)
+	if (fd < 0 || fd >= FILE_DESCRIPTORS)
 		return (NULL);
 	line = ft_ds_new(buffers[fd]);
 	ft_bzero(buffers[fd], BUFFER_SIZE + 1);
-	if (!keep_reading(fd, &line, states + fd))
+	if (!keep_reading(fd, &line, is_last_line + fd))
 		return (NULL);
 	nl_index = find_newline(line.content, SIZE_MAX);
-	if (states[fd] == LAST_LINE
+	if (is_last_line[fd]
 		&& (nl_index == SIZE_MAX || line.content[nl_index + 1] == '\0'))
 	{
-		states[fd] = FINISHED;
+		is_last_line[fd] = false;
 		return (line.content);
 	}
 	return_value = strcut(line.content, buffers[fd], nl_index + 1);
 	if (return_value == NULL)
-		states[fd] = FINISHED;
+		is_last_line[fd] = false;
 	return (return_value);
 }
