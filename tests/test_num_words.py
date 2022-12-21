@@ -7,7 +7,7 @@ ft_num_words.restype = c_size_t
 
 
 def check(s, c):
-    assert ft_num_words(bytes(s, "utf-8"), ord(c)) == sum(w != "" for w in s.split(c) if w != "")
+    assert ft_num_words(bytes(s, "utf-8"), ord(c)) == sum(map("".__ne__, s.split(c)))
 
 
 def test_basic():
