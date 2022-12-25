@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2022/12/25 02:43:47 by axbrisse         ###   ########.fr        #
+#    Updated: 2022/12/25 11:02:24 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,7 +97,7 @@ all: ${LIBRARY}
 ${LIBRARY}: ${OBJS}
 	${AR} ${LIBRARY} $^
 
-${OBJS}: ${PATH_OBJS}/%.o: %.c ${HEADER}
+${OBJS}: ${PATH_OBJS}/%.o: %.c
 	@mkdir -p ${PATH_OBJS}
 	${CC} ${CFLAGS} -fPIC -c $< -o $@ -I${INCLUDES}
 
