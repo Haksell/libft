@@ -1,5 +1,5 @@
 from ctypes import CFUNCTYPE, byref, POINTER, c_int, c_void_p
-from random import randint, randrange
+from random import randint
 from test_lstnew import ft_lstnew
 from test_lstadd_front import ft_lstadd_front
 from utils import libft, lst_to_arr, t_list
