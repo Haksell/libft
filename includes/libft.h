@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/25 02:42:51 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/25 13:52:14 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ t_list				*ft_lstmap(t_list *lst,
 						void *(*f)(void *), void (*del)(void *));
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
+void				ft_lst_sort(t_list *lst, int (*cmp)(void *, void *));
 
 //srcs/memory
 void				ft_bzero(void *s, size_t n);

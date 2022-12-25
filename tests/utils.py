@@ -22,4 +22,13 @@ class t_list(Structure):
 
 t_list._fields_ = [("content", c_void_p), ("next", POINTER(t_list))]
 
+
+def lst_to_arr(lst):
+    arr = []
+    while lst:
+        arr.append(lst.contents.content or 0)
+        lst = lst.contents.next
+    return arr
+
+
 libft = CDLL("./libft.so")

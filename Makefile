@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2022/12/25 11:02:24 by axbrisse         ###   ########.fr        #
+#    Updated: 2022/12/25 13:45:48 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ FILES += ft_lstlast
 FILES += ft_lstmap
 FILES += ft_lstnew
 FILES += ft_lstsize
+FILES += ft_lst_sort
 FILES += ft_memchr
 FILES += ft_memcmp
 FILES += ft_memcpy
