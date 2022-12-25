@@ -8,7 +8,7 @@ ft_atoi.restype = c_int
 
 
 def compare(n):
-    assert libft.ft_atoi(bytes(str(n), "utf-8")) == n
+    assert ft_atoi(bytes(str(n), "utf-8")) == n
 
 
 def test_limits():

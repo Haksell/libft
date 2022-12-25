@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/21 05:25:43 by axbrisse         ###   ########.fr       */
+/*   Updated: 2022/12/25 02:42:51 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int					ft_toupper(int c);
 
 // srcs/conversion
 int					ft_atoi(const char *nptr);
+bool				ft_atoi_safe(char *s, int *n);
 char				*ft_itoa(int n);
 
 // srcs/dynamic_strings

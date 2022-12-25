@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2022/12/21 00:25:42 by axbrisse         ###   ########.fr        #
+#    Updated: 2022/12/25 02:43:47 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ PATH_SRCS += srcs/output
 PATH_SRCS += srcs/strings
 
 FILES += ft_atoi
+FILES += ft_atoi_safe
 FILES += ft_bzero
 FILES += ft_calloc
 FILES += ft_ds_extend
