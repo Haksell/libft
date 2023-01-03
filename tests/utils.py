@@ -5,7 +5,7 @@ INT_MIN = ~INT_MAX
 
 
 def sign(n):
-    return 1 if n > 0 else -1 if n < 0 else 0
+    return (n > 0) - (n < 0)
 
 
 def same_sign(n1, n2):
