@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/03 16:49:27 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/01/06 21:24:04 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,6 @@ char				*ft_itoa(int n);
 // srcs/dynamic_strings
 bool				ft_ds_extend(t_dynamic_string *s1, char *s2, size_t len2);
 t_dynamic_string	ft_ds_new(char *s);
-
-// srcs/get_next_line
-char				*get_next_line(int fd);
 
 // srcs/linked_lists
 void				ft_lstadd_back(t_list **lst, t_list *new);

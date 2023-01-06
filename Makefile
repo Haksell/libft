@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2022/12/25 14:08:19 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/01/06 21:24:15 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ SHARED_LIBRARY = ${addsuffix .so, ${NAME}}
 PATH_SRCS += srcs/conversion
 PATH_SRCS += srcs/chars
 PATH_SRCS += srcs/dynamic_strings
-PATH_SRCS += srcs/get_next_line
 PATH_SRCS += srcs/linked_lists
 PATH_SRCS += srcs/math
 PATH_SRCS += srcs/memory
@@ -80,7 +79,6 @@ FILES += ft_strtrim
 FILES += ft_substr
 FILES += ft_tolower
 FILES += ft_toupper
-FILES += get_next_line
 
 SRCS = ${addsuffix .c, ${FILES}}
 
