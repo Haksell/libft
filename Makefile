@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/01/06 21:24:15 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/01/06 21:33:06 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ FILES += ft_atoi
 FILES += ft_atoi_safe
 FILES += ft_bzero
 FILES += ft_calloc
+FILES += ft_ds_append
 FILES += ft_ds_extend
 FILES += ft_ds_new
 FILES += ft_free_double_pointer
@@ -113,8 +114,10 @@ fclean: clean
 
 re: fclean ${LIBRARY}
 
-test: ${OBJS}
+pretest: ${OBJS}
 	@${CC} -fPIC -shared -o ${SHARED_LIBRARY} ${OBJS}
+
+test: pretest
 	pytest -rA tests
 
 retest: fclean test

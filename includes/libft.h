@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/06 21:24:04 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/01/06 21:27:07 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ bool				ft_atoi_safe(char *s, int *n);
 char				*ft_itoa(int n);
 
 // srcs/dynamic_strings
+bool				ft_ds_append(t_dynamic_string *s1, char c);
 bool				ft_ds_extend(t_dynamic_string *s1, char *s2, size_t len2);
 t_dynamic_string	ft_ds_new(char *s);
 
