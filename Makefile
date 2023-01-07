@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/01/06 22:32:28 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/01/07 04:52:02 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,4 +124,4 @@ test: pretest
 
 retest: fclean test
 
-.PHONY: all clean fclean re test retest
+.PHONY: all clean fclean re pretest test retest
