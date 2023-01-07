@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_num_words.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:32:10 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/07 01:43:56 by axbrisse         ###   ########.fr       */
+/*   Created: 2022/12/21 00:23:34 by axbrisse          #+#    #+#             */
+/*   Updated: 2023/01/07 03:21:15 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+size_t	ft_num_words(char const *s, char const *set)
 {
-	const size_t	bytes = nmemb * size;
-	void			*ptr;
+	bool	last_is_separator;
+	size_t	res;
+	size_t	i;
 
-	if (size > 0 && nmemb > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(bytes);
-	if (ptr != NULL)
-		ft_bzero(ptr, bytes);
-	return (ptr);
+	last_is_separator = true;
+	res = 0;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (ft_strchr(set, s[i]) != NULL)
+			last_is_separator = true;
+		else
+		{
+			if (last_is_separator)
+				++res;
+			last_is_separator = false;
+		}
+		++i;
+	}
+	return (res);
 }

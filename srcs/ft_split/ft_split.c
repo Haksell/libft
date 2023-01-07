@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_num_words.c                                     :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 00:23:34 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/12/25 02:32:09 by axbrisse         ###   ########.fr       */
+/*   Created: 2022/11/09 11:06:08 by axbrisse          #+#    #+#             */
+/*   Updated: 2023/01/07 04:29:40 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_num_words(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	bool	last_is_separator;
-	size_t	res;
-	size_t	i;
+	const char	set[] = {c, '\0'};
 
-	last_is_separator = true;
-	res = 0;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			last_is_separator = true;
-		else
-		{
-			if (last_is_separator)
-				res++;
-			last_is_separator = false;
-		}
-		i++;
-	}
-	return (res);
+	return (ft_split_set(s, set));
 }

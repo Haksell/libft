@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/01/06 21:33:06 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/01/06 22:32:28 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SHARED_LIBRARY = ${addsuffix .so, ${NAME}}
 PATH_SRCS += srcs/conversion
 PATH_SRCS += srcs/chars
 PATH_SRCS += srcs/dynamic_strings
+PATH_SRCS += srcs/ft_split
 PATH_SRCS += srcs/linked_lists
 PATH_SRCS += srcs/math
 PATH_SRCS += srcs/memory
@@ -64,6 +65,7 @@ FILES += ft_putendl_fd
 FILES += ft_putnbr_fd
 FILES += ft_putstr_fd
 FILES += ft_split
+FILES += ft_split_set
 FILES += ft_strchr
 FILES += ft_strcmp
 FILES += ft_strdup
