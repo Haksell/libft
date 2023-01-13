@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/07 04:32:07 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/01/13 05:43:54 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_islower(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 int					ft_isupper(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);

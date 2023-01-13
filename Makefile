@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/01/07 04:52:02 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/01/13 05:43:45 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ FILES += ft_isascii
 FILES += ft_isdigit
 FILES += ft_islower
 FILES += ft_isprint
+FILES += ft_isspace
 FILES += ft_isupper
 FILES += ft_itoa
 FILES += ft_lstadd_back
