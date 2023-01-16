@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_double_pointer.c                           :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 22:24:08 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/16 11:37:12 by axbrisse         ###   ########.fr       */
+/*   Created: 2023/01/16 11:26:50 by axbrisse          #+#    #+#             */
+/*   Updated: 2023/01/16 11:35:40 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 // TODO test
 
-void	ft_free_double_pointer(void **grid, size_t height)
+void	ft_free(void **ptr)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < height)
+	if (*ptr != NULL)
 	{
-		ft_free(grid + i);
-		++i;
+		free(*ptr);
+		*ptr = NULL;
 	}
-	ft_free((void **)&grid);
 }
