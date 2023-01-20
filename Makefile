@@ -6,13 +6,13 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/01/20 14:43:05 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/01/20 14:47:12 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
-LIBRARY = ${addsuffix .a, ${NAME}}
-SHARED_LIBRARY = ${addsuffix .so, ${NAME}}
+NAME := libft
+LIBRARY := ${addsuffix .a, ${NAME}}
+SHARED_LIBRARY := ${addsuffix .so, ${NAME}}
 
 PATH_SRCS += srcs/conversion
 PATH_SRCS += srcs/chars
@@ -89,18 +89,17 @@ FILES += ft_toupper
 
 SRCS = ${addsuffix .c, ${FILES}}
 
-HEADER = includes/libft.h
+INCLUDES := includes
+HEADER := includes/libft.h
 
 vpath %.c ${PATH_SRCS}
 
-PATH_OBJS = objs
-OBJS = ${patsubst %.c, ${PATH_OBJS}/%.o, ${SRCS}}
+PATH_OBJS := objs
+OBJS := ${patsubst %.c, ${PATH_OBJS}/%.o, ${SRCS}}
 
-INCLUDES = includes
-
-AR = ar rcs
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+AR := ar rcs
+CC := cc
+CFLAGS := -Wall -Wextra -Werror
 
 all: ${LIBRARY}
 
