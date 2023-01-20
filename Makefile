@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/01/20 14:47:12 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/01/20 17:33:46 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,7 +125,7 @@ pretest: ${OBJS}
 	@${CC} -fPIC -shared -o ${SHARED_LIBRARY} ${OBJS}
 
 test: pretest
-	pytest -rA tests
+	pytest -rA -vv tests
 
 retest: fclean test
 
