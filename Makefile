@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/01/16 11:36:40 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/01/20 14:43:05 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ FILES += ft_calloc
 FILES += ft_ds_append
 FILES += ft_ds_extend
 FILES += ft_ds_new
+FILES += ft_endswith
 FILES += ft_free
 FILES += ft_free_double_pointer
 FILES += ft_isalnum
@@ -68,6 +69,7 @@ FILES += ft_putnbr_fd
 FILES += ft_putstr_fd
 FILES += ft_split
 FILES += ft_split_set
+FILES += ft_startswith
 FILES += ft_strchr
 FILES += ft_strcmp
 FILES += ft_strdup
@@ -87,6 +89,8 @@ FILES += ft_toupper
 
 SRCS = ${addsuffix .c, ${FILES}}
 
+HEADER = includes/libft.h
+
 vpath %.c ${PATH_SRCS}
 
 PATH_OBJS = objs
@@ -103,7 +107,7 @@ all: ${LIBRARY}
 ${LIBRARY}: ${OBJS}
 	${AR} ${LIBRARY} $^
 
-${OBJS}: ${PATH_OBJS}/%.o: %.c
+${OBJS}: ${PATH_OBJS}/%.o: %.c ${HEADER}
 	@mkdir -p ${PATH_OBJS}
 	${CC} ${CFLAGS} -fPIC -c $< -o $@ -I${INCLUDES}
 

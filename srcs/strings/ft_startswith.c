@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_startswith.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:26:50 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/20 14:36:09 by axbrisse         ###   ########.fr       */
+/*   Created: 2022/11/08 17:35:36 by axbrisse          #+#    #+#             */
+/*   Updated: 2023/01/20 14:39:09 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-// TODO test
-
-void	ft_free(void **ptr)
+bool	ft_startswith(const char *str, const char *start)
 {
-	if (*ptr != NULL)
-	{
-		free(*ptr);
-		*ptr = NULL;
-	}
+	return (ft_strncmp(str, start, ft_strlen(start)) == 0);
 }

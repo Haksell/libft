@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/16 11:36:33 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:43:17 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int					ft_putnbr_fd(int n, int fd);
 int					ft_putstr_fd(char *s, int fd);
 
 // src/strings
+bool				ft_endswith(const char *str, const char *end);
+bool				ft_startswith(const char *str, const char *start);
 char				*ft_strchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strdup(const char *s);
