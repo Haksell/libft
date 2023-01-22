@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/20 14:43:17 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/01/22 05:13:26 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # define HEXA_LOWER "0123456789abcdef"
 # define HEXA_UPPER "0123456789ABCDEF"
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+# define FILE_DESCRIPTORS 256
+
+# include <limits.h>
 # include <stdarg.h>
 # include <stdbool.h>
 # include <stdint.h>
@@ -62,6 +68,9 @@ t_dynamic_string	ft_ds_new(char *s);
 size_t				ft_num_words(char const *s, char const *set);
 char				**ft_split_set(char const *s, char const *set);
 char				**ft_split(char const *s, char c);
+
+// get_next_line.c
+char				*get_next_line(int fd);
 
 // srcs/linked_lists
 void				ft_lstadd_back(t_list **lst, t_list *new);
