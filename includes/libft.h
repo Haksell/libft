@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/07 12:49:59 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/08 04:13:46 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ int					ft_isupper(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 
+// srcs/clean
+void				ft_close(int *fd);
+void				ft_free(void **ptr);
+void				ft_free_double_pointer(void ***grid, size_t height);
+
 // srcs/conversion
 int					ft_atoi(const char *nptr);
 bool				ft_atoi_safe(char *s, int *n);
@@ -90,8 +95,6 @@ void				ft_lst_sort(t_list *lst, int (*cmp)(void *, void *));
 //srcs/memory
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
-void				ft_free(void **ptr);
-void				ft_free_double_pointer(void ***grid, size_t height);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);

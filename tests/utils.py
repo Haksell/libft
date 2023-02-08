@@ -1,4 +1,4 @@
-# TODO test ft_free and ft_free_double_pointer
+# TODO test ft_clean, ft_free, ft_free_double_pointer
 
 from ctypes import CDLL, c_char_p, c_size_t, c_void_p, POINTER, Structure
 

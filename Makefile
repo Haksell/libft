@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/01/22 05:12:50 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/02/08 04:19:05 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SHARED_LIBRARY := ${addsuffix .so, ${NAME}}
 
 PATH_SRCS += srcs/conversion
 PATH_SRCS += srcs/chars
+PATH_SRCS += srcs/clean
 PATH_SRCS += srcs/dynamic_strings
 PATH_SRCS += srcs/ft_split
 PATH_SRCS += srcs/get_next_line
@@ -29,6 +30,7 @@ FILES += ft_atoi
 FILES += ft_atoi_safe
 FILES += ft_bzero
 FILES += ft_calloc
+FILES += ft_close
 FILES += ft_ds_append
 FILES += ft_ds_extend
 FILES += ft_ds_new
@@ -89,7 +91,7 @@ FILES += ft_tolower
 FILES += ft_toupper
 FILES += get_next_line
 
-SRCS = ${addsuffix .c, ${FILES}}
+SRCS := ${addsuffix .c, ${FILES}}
 
 INCLUDES := includes
 HEADER := includes/libft.h
