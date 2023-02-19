@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/08 04:13:46 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/09 21:04:21 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,8 @@ char				*ft_strchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin3(char const *s1, char const *s2,
+						char const *s3);
 void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
