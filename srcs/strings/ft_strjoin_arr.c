@@ -6,16 +6,16 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:43:27 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/19 08:55:24 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/19 09:12:44 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	full_strlen(int size, char **strs, char *sep)
+static size_t	full_strlen(int size, char **strs, char *sep)
 {
-	unsigned int	res;
-	int				i;
+	size_t	res;
+	int		i;
 
 	if (size == 0)
 		return (0);
@@ -27,20 +27,6 @@ unsigned int	full_strlen(int size, char **strs, char *sep)
 		i++;
 	}
 	return (res);
-}
-
-unsigned int	ft_strcpy(char *dest, char *src)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (i);
 }
 
 char	*ft_strjoin_arr(int size, char **strs, char *sep)
@@ -58,9 +44,9 @@ char	*ft_strjoin_arr(int size, char **strs, char *sep)
 	full_idx = 0;
 	while (arr_idx < size)
 	{
-		full_idx += ft_strcpy(joined + full_idx, strs[arr_idx]);
+		full_idx += ft_strlcpy(joined + full_idx, strs[arr_idx], length + 1);
 		if (arr_idx < size - 1)
-			full_idx += ft_strcpy(joined + full_idx, sep);
+			full_idx += ft_strlcpy(joined + full_idx, sep, length + 1);
 		arr_idx++;
 	}
 	joined[length] = '\0';
