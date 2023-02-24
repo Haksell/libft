@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/24 21:49:56 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/24 22:31:44 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,20 @@ bool				ft_ds_append(t_dynamic_string *s1, char c);
 bool				ft_ds_extend(t_dynamic_string *s1, char *s2, size_t len2);
 t_dynamic_string	ft_ds_new(char *s);
 
+// srcs/ft_printf
+int					ft_printf(const char *format, ...);
+bool				write_ptr(t_dynamic_string *buffer, void *ptr);
+bool				write_str(t_dynamic_string *buffer, char *s);
+bool				write_nbr(t_dynamic_string *buffer, int n);
+bool				write_nbr_base(t_dynamic_string *buffer, unsigned long n,
+						char *base);
+
 // srcs/ft_split
 size_t				ft_num_words(char const *s, char const *set);
 char				**ft_split_set(char const *s, char const *set);
 char				**ft_split(char const *s, char c);
 
-// get_next_line.c
+// srcs/get_next_line
 char				*get_next_line(int fd);
 
 // srcs/linked_lists
@@ -103,7 +111,6 @@ void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 
 // srcs/output
-int					ft_printf(const char *format, ...);
 int					ft_putbase_fd(unsigned long n,
 						char *base, size_t base_length, int fd);
 int					ft_putchar_fd(char c, int fd);

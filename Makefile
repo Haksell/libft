@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/02/24 21:50:08 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/02/24 22:31:37 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ PATH_SRCS += srcs/conversion
 PATH_SRCS += srcs/chars
 PATH_SRCS += srcs/clean
 PATH_SRCS += srcs/dynamic_strings
+PATH_SRCS += srcs/ft_printf
 PATH_SRCS += srcs/ft_split
 PATH_SRCS += srcs/get_next_line
 PATH_SRCS += srcs/linked_lists
@@ -66,6 +67,7 @@ FILES += ft_memmove
 FILES += ft_memset
 FILES += ft_num_words
 FILES += ft_printf
+FILES += ft_printf2
 FILES += ft_putbase_fd
 FILES += ft_putchar_fd
 FILES += ft_putendl_fd
