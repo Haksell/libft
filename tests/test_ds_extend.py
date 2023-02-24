@@ -7,23 +7,23 @@ ft_ds_extend.argtypes = (POINTER(t_dynamic_string), c_char_p, c_size_t)
 ft_ds_extend.restype = c_bool
 
 
-def check_one(dynamic_string, content, capacity):
+def check_one(dynamic_string, content, len_start):
+    expected_capacity = len_start + 1
+    while expected_capacity <= len(content):
+        expected_capacity <<= 1
     assert dynamic_string.content == content
     assert dynamic_string.length == len(content)
-    assert dynamic_string.capacity == capacity
+    assert dynamic_string.capacity == expected_capacity
 
 
 def check_sequence(start, extensions):
     dynamic_string = ft_ds_new(start)
     content = start
-    capacity = len(start) + 1
-    check_one(dynamic_string, content, capacity)
+    check_one(dynamic_string, content, len(start))
     for s in extensions:
         ft_ds_extend(byref(dynamic_string), s, len(s))
         content += s
-        if len(content) >= capacity:
-            capacity = max(2 * capacity, len(content) + 1)
-        check_one(dynamic_string, content, capacity)
+        check_one(dynamic_string, content, len(start))
 
 
 def test_ds_empty_empty():
