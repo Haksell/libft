@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/02/19 08:55:59 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/02/24 21:50:08 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ FILES += ft_isprint
 FILES += ft_isspace
 FILES += ft_isupper
 FILES += ft_itoa
+FILES += ft_itoa_base
 FILES += ft_lstadd_back
 FILES += ft_lstadd_front
 FILES += ft_lstclear

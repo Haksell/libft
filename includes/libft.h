@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/19 08:56:13 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/24 21:49:56 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void				ft_free_double_pointer(void ***grid, size_t height);
 int					ft_atoi(const char *nptr);
 bool				ft_atoi_safe(char *s, int *n);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(unsigned long n, char *base);
 
 // srcs/dynamic_strings
 bool				ft_ds_append(t_dynamic_string *s1, char c);
