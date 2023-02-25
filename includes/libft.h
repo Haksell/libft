@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 23:40:20 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 23:50:14 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,17 @@ char				*ft_itoa(int n);
 char				*ft_itoa_base(unsigned long n, char *base);
 
 // srcs/dynamic_strings
+bool				ft_ds_add_nbr(t_dynamic_string *buffer, int n);
+bool				ft_ds_add_nbr_base(t_dynamic_string *buffer,
+						unsigned long n, char *base);
 bool				ft_ds_append(t_dynamic_string *s1, char c);
 bool				ft_ds_extend(t_dynamic_string *s1, char *s2, size_t len2);
+bool				ft_ds_extend_free(t_dynamic_string *buffer, char *s);
 t_dynamic_string	ft_ds_new(char *s);
 
 // srcs/ft_printf
 int					ft_printf(const char *format, ...);
 int					ft_vdprintf(int fd, const char *format, va_list ap);
-bool				write_ptr(t_dynamic_string *buffer, void *ptr);
-bool				write_str(t_dynamic_string *buffer, char *s);
 bool				write_nbr(t_dynamic_string *buffer, int n);
 bool				write_nbr_base(t_dynamic_string *buffer, unsigned long n,
 						char *base);

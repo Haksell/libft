@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/02/25 23:42:56 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/02/25 23:50:33 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,11 @@ FILES += ft_atoi_safe
 FILES += ft_bzero
 FILES += ft_calloc
 FILES += ft_close
+FILES += ft_ds_add_nbr
+FILES += ft_ds_add_nbr_base
 FILES += ft_ds_append
 FILES += ft_ds_extend
+FILES += ft_ds_extend_free
 FILES += ft_ds_new
 FILES += ft_endswith
 FILES += ft_free
@@ -95,7 +98,6 @@ FILES += ft_tolower
 FILES += ft_toupper
 FILES += ft_vdprintf
 FILES += get_next_line
-FILES += printf_utils
 
 SRCS := ${addsuffix .c, ${FILES}}
 

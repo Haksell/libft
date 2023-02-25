@@ -6,11 +6,26 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 23:41:07 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 23:43:14 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 23:51:17 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static bool	write_ptr(t_dynamic_string *buffer, void *ptr)
+{
+	if (ptr == NULL)
+		return (ft_ds_extend(buffer, "(nil)", SIZE_MAX));
+	return (ft_ds_extend(buffer, "0x", SIZE_MAX)
+		&& ft_ds_add_nbr_base(buffer, (unsigned long)ptr, HEXA_LOWER));
+}
+
+static bool	write_str(t_dynamic_string *buffer, char *s)
+{
+	if (s == NULL)
+		return (ft_ds_extend(buffer, "(null)", SIZE_MAX));
+	return (ft_ds_extend(buffer, s, SIZE_MAX));
+}
 
 static bool	convert(t_dynamic_string *buffer, char format_char, va_list ap)
 {
@@ -23,13 +38,15 @@ static bool	convert(t_dynamic_string *buffer, char format_char, va_list ap)
 	else if (format_char == 'p')
 		return (write_ptr(buffer, va_arg(ap, void *)));
 	else if (format_char == 'd' || format_char == 'i')
-		return (write_nbr(buffer, va_arg(ap, int)));
+		return (ft_ds_add_nbr(buffer, va_arg(ap, int)));
 	else if (format_char == 'u')
-		return (write_nbr_base(buffer, va_arg(ap, unsigned int), DECIMAL));
+		return (ft_ds_add_nbr_base(buffer, va_arg(ap, unsigned int), DECIMAL));
 	else if (format_char == 'x')
-		return (write_nbr_base(buffer, va_arg(ap, unsigned int), HEXA_LOWER));
+		return (ft_ds_add_nbr_base(buffer, va_arg(ap, unsigned int),
+				HEXA_LOWER));
 	else if (format_char == 'X')
-		return (write_nbr_base(buffer, va_arg(ap, unsigned int), HEXA_UPPER));
+		return (ft_ds_add_nbr_base(buffer, va_arg(ap, unsigned int),
+				HEXA_UPPER));
 	return (false);
 }
 
