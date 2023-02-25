@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/25 23:50:14 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/26 00:01:04 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,10 @@ bool				ft_ds_extend_free(t_dynamic_string *buffer, char *s);
 t_dynamic_string	ft_ds_new(char *s);
 
 // srcs/ft_printf
+int					ft_dprintf(int fd, const char *format, ...);
 int					ft_printf(const char *format, ...);
 int					ft_vdprintf(int fd, const char *format, va_list ap);
-bool				write_nbr(t_dynamic_string *buffer, int n);
-bool				write_nbr_base(t_dynamic_string *buffer, unsigned long n,
-						char *base);
+int					ft_vprintf(const char *format, va_list ap);
 
 // srcs/ft_split
 size_t				ft_num_words(char const *s, char const *set);

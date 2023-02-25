@@ -3,8 +3,9 @@ from utils import libft
 from random import sample
 
 ft_printf = libft.ft_printf
-# ft_printf.argtypes = (c_char_p, ...)
 ft_printf.restype = c_int
+ft_dprintf = libft.ft_dprintf
+ft_dprintf.restype = c_int
 
 
 def compare(capfd, format, *args):
@@ -13,8 +14,13 @@ def compare(capfd, format, *args):
     printf_output = sb.value.decode("utf-8")
     ft_printf_return = libft.ft_printf(format, *args)
     ft_printf_output = capfd.readouterr().out
-    info = f"{printf_output=} | {ft_printf_output=} | {printf_return=} | {ft_printf_return=} | {format=} | {args=}"
-    assert printf_output == ft_printf_output and printf_return == ft_printf_return, info
+    ft_dprintf_return = libft.ft_dprintf(2, format, *args)
+    ft_dprintf_errput = capfd.readouterr().err
+    info = f"{printf_output=} | {ft_printf_output=} | {ft_dprintf_errput=} | {printf_return=} | {ft_printf_return=} | {ft_dprintf_return=} | {format=} | {args=}"
+    assert (
+        printf_output == ft_printf_output == ft_dprintf_errput
+        and printf_return == ft_printf_return == ft_dprintf_return
+    ), info
 
 
 def test_no_conversion(capfd):
