@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 08:51:07 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/24 22:32:39 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 21:59:27 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ static bool	convert(t_dynamic_string *buffer, char format_char, va_list ap)
 int	ft_printf(const char *format, ...)
 {
 	t_dynamic_string	buffer;
-	bool				success;
 	va_list				ap;
+	ssize_t				written;
 	size_t				i;
+	bool				success;
 
 	buffer = ft_ds_new("");
 	if (buffer.content == NULL)
@@ -56,5 +57,7 @@ int	ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
-	return (write(STDOUT_FILENO, buffer.content, ft_strlen(buffer.content)));
+	written = write(STDOUT_FILENO, buffer.content, ft_strlen(buffer.content));
+	free(buffer.content);
+	return (written);
 }
