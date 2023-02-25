@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/24 22:31:44 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/25 23:40:20 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_dynamic_string	ft_ds_new(char *s);
 
 // srcs/ft_printf
 int					ft_printf(const char *format, ...);
+int					ft_vdprintf(int fd, const char *format, va_list ap);
 bool				write_ptr(t_dynamic_string *buffer, void *ptr);
 bool				write_str(t_dynamic_string *buffer, char *s);
 bool				write_nbr(t_dynamic_string *buffer, int n);
