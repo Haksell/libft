@@ -6,6 +6,8 @@ ft_printf = libft.ft_printf
 ft_printf.restype = c_int
 ft_dprintf = libft.ft_dprintf
 ft_dprintf.restype = c_int
+ft_sprintf = libft.ft_sprintf
+ft_sprintf.restype = c_char_p
 
 
 def compare(capfd, format, *args):
@@ -15,10 +17,11 @@ def compare(capfd, format, *args):
     ft_printf_return = libft.ft_printf(format, *args)
     ft_printf_output = capfd.readouterr().out
     ft_dprintf_return = libft.ft_dprintf(2, format, *args)
-    ft_dprintf_errput = capfd.readouterr().err
-    info = f"{printf_output=} | {ft_printf_output=} | {ft_dprintf_errput=} | {printf_return=} | {ft_printf_return=} | {ft_dprintf_return=} | {format=} | {args=}"
+    ft_dprintf_output = capfd.readouterr().err
+    ft_sprintf_str = libft.ft_sprintf(format, *args).decode()
+    info = f"{printf_output=} | {ft_printf_output=} | {ft_dprintf_output=} | {ft_sprintf_str=} | {printf_return=} | {ft_printf_return=} | {ft_dprintf_return=} | {format=} | {args=}"
     assert (
-        printf_output == ft_printf_output == ft_dprintf_errput
+        printf_output == ft_printf_output == ft_dprintf_output == ft_sprintf_str
         and printf_return == ft_printf_return == ft_dprintf_return
     ), info
 

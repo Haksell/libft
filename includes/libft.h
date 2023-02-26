@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/26 00:01:04 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/02/26 14:16:13 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,10 @@ t_dynamic_string	ft_ds_new(char *s);
 // srcs/ft_printf
 int					ft_dprintf(int fd, const char *format, ...);
 int					ft_printf(const char *format, ...);
+char				*ft_sprintf(const char *format, ...);
 int					ft_vdprintf(int fd, const char *format, va_list ap);
 int					ft_vprintf(const char *format, va_list ap);
+char				*ft_vsprintf(const char *format, va_list ap);
 
 // srcs/ft_split
 size_t				ft_num_words(char const *s, char const *set);

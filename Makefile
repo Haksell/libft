@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/02/26 00:01:15 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/02/26 14:16:23 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,7 @@ FILES += ft_putnbr_fd
 FILES += ft_putstr_fd
 FILES += ft_split
 FILES += ft_split_set
+FILES += ft_sprintf
 FILES += ft_startswith
 FILES += ft_strchr
 FILES += ft_strcmp
@@ -99,6 +100,7 @@ FILES += ft_tolower
 FILES += ft_toupper
 FILES += ft_vdprintf
 FILES += ft_vprintf
+FILES += ft_vsprintf
 FILES += get_next_line
 
 SRCS := ${addsuffix .c, ${FILES}}
