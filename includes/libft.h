@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/26 14:16:13 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/03/01 03:05:54 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ typedef struct s_list
 
 typedef struct s_dynamic_string {
 	char	*content;
-	size_t	length;
-	size_t	capacity;
+	int		length;
+	int		capacity;
 }	t_dynamic_string;
 
 // srcs/chars
@@ -67,8 +67,8 @@ char				*ft_itoa_base(unsigned long n, char *base);
 
 // srcs/dynamic_strings
 bool				ft_ds_add_nbr(t_dynamic_string *buffer, int n);
-bool				ft_ds_add_nbr_base(t_dynamic_string *buffer,
-						unsigned long n, char *base);
+bool				ft_ds_add_nbr_base(
+						t_dynamic_string *buffer, unsigned long n, char *base);
 bool				ft_ds_append(t_dynamic_string *s1, char c);
 bool				ft_ds_extend(t_dynamic_string *s1, char *s2, size_t len2);
 bool				ft_ds_extend_free(t_dynamic_string *buffer, char *s);
