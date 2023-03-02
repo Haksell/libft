@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 11:27:39 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/03/01 04:40:52 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/03/03 00:32:58 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char				*ft_itoa_base(unsigned long n, char *base);
 bool				ft_ds_add_nbr(t_dynamic_string *buffer, int n);
 bool				ft_ds_add_nbr_base(
 						t_dynamic_string *buffer, unsigned long n, char *base);
-bool				ft_ds_append(t_dynamic_string *s1, char c);
+bool				ft_ds_append(t_dynamic_string *ds, char c);
 bool				ft_ds_extend(t_dynamic_string *s1, char *s2, size_t len2);
 bool				ft_ds_extend_free(t_dynamic_string *buffer, char *s);
 t_dynamic_string	ft_ds_new(char *s);
