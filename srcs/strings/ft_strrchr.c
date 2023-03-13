@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:52:27 by axbrisse          #+#    #+#             */
-/*   Updated: 2022/11/11 19:33:14 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:11:31 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	ptr = NULL;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i] == uc)
 			ptr = (char *)(s + i);
