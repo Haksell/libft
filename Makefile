@@ -6,7 +6,7 @@
 #    By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 22:24:32 by axbrisse          #+#    #+#              #
-#    Updated: 2023/03/27 05:45:31 by axbrisse         ###   ########.fr        #
+#    Updated: 2023/04/03 19:26:20 by axbrisse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,8 +106,7 @@ FILES += get_next_line
 
 SRCS := ${addsuffix .c, ${FILES}}
 
-INCLUDES := includes
-HEADER := includes/libft.h
+HEADER := libft.h
 
 vpath %.c ${PATH_SRCS}
 
@@ -125,7 +124,7 @@ ${LIBRARY}: ${OBJS}
 
 ${OBJS}: ${PATH_OBJS}/%.o: %.c ${HEADER}
 	@mkdir -p ${PATH_OBJS}
-	${CC} ${CFLAGS} -fPIC -c $< -o $@ -I${INCLUDES}
+	${CC} ${CFLAGS} -fPIC -c $< -o $@ -I.
 
 clean:
 	rm -rf ${PATH_OBJS}

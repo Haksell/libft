@@ -3,7 +3,7 @@ import os
 CHECK_LEAKS = False
 VALGRIND = "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -q"
 BUFFER_SIZES = [None, 1, 2, 3, 42, 1024]
-CC = "cc -Wall -Wextra -Werror -g3 -I./includes"
+CC = "cc -Wall -Wextra -Werror -g3 -I./"
 FILES = "tests/gnl_files"
 OUTPUT = "tests/files/output.txt"
 SRCS = " ".join(

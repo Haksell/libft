@@ -6,11 +6,11 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 05:27:11 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/22 05:45:55 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:26:30 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../libft.h"
 #include <fcntl.h>
 #include <stdio.h>
 #include <sys/stat.h>
