@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 04:55:55 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/01/22 05:13:14 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/04/06 21:33:20 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*get_next_line(int fd)
 	int			nl_index;
 	char		*line;
 
-	if (fd < 0 || fd >= FILE_DESCRIPTORS)
+	if (fd < 0 || fd >= FILE_DESCRIPTORS || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = ft_strdup(buffers[fd]);
 	nl_index = find_newline(line);
