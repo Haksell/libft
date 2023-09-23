@@ -6,7 +6,7 @@
 /*   By: axbrisse <axbrisse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 21:49:23 by axbrisse          #+#    #+#             */
-/*   Updated: 2023/02/24 22:01:35 by axbrisse         ###   ########.fr       */
+/*   Updated: 2023/05/04 06:14:19 by axbrisse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ static void	ft_itoa_recursive(
 
 char	*ft_itoa_base(unsigned long n, char *base)
 {
-	const size_t		base_length = ft_strlen(base);
-	const int			total_size = get_length(n, base_length);
-	char				*result;
+	const size_t	base_length = ft_strlen(base);
+	const int		total_size = get_length(n, base_length);
+	char			*result;
 
 	if (n == 0)
 		return (ft_substr(base, 0, 1));
