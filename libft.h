@@ -92,8 +92,8 @@ char				**ft_split(char const *s, char c);
 char				*get_next_line(int fd);
 
 // srcs/linked_lists
-void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *node);
+void				ft_lstadd_front(t_list **lst, t_list *node);
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
